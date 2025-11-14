@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,16 +70,16 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Divider(thickness: 3, color: Color(0xffF4A758)),
+                    child: Divider(thickness: 3,),
                   ),
-                  Expanded(child: Divider(thickness: 3)),
+                  Expanded(child: Divider(thickness: 3, color: Color(0xffF4A758))),
                 ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16, top: 15),
               child: Text(
-                "Welcome Back! ",
+                "Let’s Get Started!",
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
@@ -90,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 17, top: 7),
               child: Text(
-                "Please enter your details to login.",
+                "Create an account.",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
@@ -99,7 +99,40 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 17, top: 19),
+              padding: const EdgeInsets.only(left: 17, top: 17),
+              child: Text(
+                "Name",
+                style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff242424),
+                  letterSpacing: 1,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(17),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: "Enter your name",
+                  labelStyle: TextStyle(
+                    color: Color(0xffC7C7C7),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 17, top: 15 ),
               child: Text(
                 "Phone Number",
                 style: TextStyle(
@@ -168,23 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 17),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "Forgot Password",
-                    style: TextStyle(
-                      color: Color(0xffF4A758),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 17,right: 17,top: 30,bottom: 10),
+              padding: const EdgeInsets.only(left: 17,right: 17,top: 30,bottom: 17),
               child: Container(
                 height: 52,
                 width: double.infinity,
@@ -195,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 child: Center(
                   child: Text(
-                    "Login",
+                    "Register",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -216,7 +233,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 17,right: 17,top: 30,bottom: 10),
+              padding: const EdgeInsets.only(left: 17,right: 17,top: 25,bottom: 10),
               child: Container(
                 height: 52,
                 width: double.infinity,
@@ -229,18 +246,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   spacing: 5,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                   Image(
-                     height: 20,
-                       width: 20,
-                       image: AssetImage("assets/Google__G__logo.png")),
+                    Image(
+                        height: 20,
+                        width: 20,
+                        image: AssetImage("assets/Google__G__logo.png")),
                     Text(
-                        "Sign in with google",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff222222),
-                        ),
+                      "Sign in with google",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff222222),
                       ),
+                    ),
                   ],
                 ),
               ),
@@ -255,24 +272,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   border: Border.all(color: Color(0xff0000001A), width: 1),
                 ),
-                  child: Row(
-                    spacing: 5,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                          height: 30,
-                          width: 30,
-                          image: AssetImage("assets/fb_logo.png")),
-                      Text(
-                        "Sign in with facebook",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff222222),
-                        ),
+                child: Row(
+                  spacing: 5,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                        height: 30,
+                        width: 30,
+                        image: AssetImage("assets/fb_logo.png")),
+                    Text(
+                      "Sign in with facebook",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff222222),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -281,7 +298,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Already have an account?",
+                    "Don’t have an account?",
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w500,
@@ -289,7 +306,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Text(
-                    " Register here",
+                    " Login",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
