@@ -209,21 +209,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 17,right: 17,top: 30,bottom: 17),
-              child: Container(
-                height: 52,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xffF4A758),
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  border: Border.all(color: Color(0xff0000001A), width: 1),
-                ),
-                child: Center(
-                  child: Text(
-                    "Register",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff222222),
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                },
+                child: Container(
+                  height: 52,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xffF4A758),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    border: Border.all(color: Color(0xff0000001A), width: 1),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Register",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff222222),
+                      ),
                     ),
                   ),
                 ),
@@ -312,12 +317,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: Color(0xff222222),
                     ),
                   ),
-                  Text(
-                    " Login",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xffF4A758),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                    },
+                    child: Text(
+                      " Login",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xffF4A758),
+                      ),
                     ),
                   ),
                 ],

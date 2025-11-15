@@ -1,6 +1,8 @@
 import 'package:first_project_dada_garments/register_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'Home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -191,21 +193,26 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 17,right: 17,top: 30,bottom: 10),
-              child: Container(
-                height: 52,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xffF4A758),
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  border: Border.all(color: Color(0xff0000001A), width: 1),
-                ),
-                child: Center(
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff222222),
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                },
+                child: Container(
+                  height: 52,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xffF4A758),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    border: Border.all(color: Color(0xff0000001A), width: 1),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff222222),
+                      ),
                     ),
                   ),
                 ),
@@ -294,12 +301,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Color(0xff222222),
                     ),
                   ),
-                  Text(
-                    " Register here",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xffF4A758),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
+                    },
+                    child: Text(
+                      " Register here",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xffF4A758),
+                      ),
                     ),
                   ),
                 ],
