@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_screen.dart';
+
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
@@ -45,12 +47,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Sign in",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff5F5F5F),
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                      },
+                      child: Text(
+                        "Sign in",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff5F5F5F),
+                        ),
                       ),
                     ),
                     Text(

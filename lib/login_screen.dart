@@ -1,3 +1,4 @@
+import 'package:first_project_dada_garments/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -53,12 +54,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: Color(0xff5F5F5F),
                       ),
                     ),
-                    Text(
-                      "Sign up",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff5F5F5F),
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
+                      },
+                      child: Text(
+                        "Sign up",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff5F5F5F),
+                        ),
                       ),
                     ),
                   ],
