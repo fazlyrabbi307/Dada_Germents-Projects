@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'category_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -8,6 +10,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
+
+  final pages = [ HomeScreen(),CategoryScreen()];
+
   List abeyaBurka = [
     {"name": "Women's 2", "image": "assets/Home Categori image.png"},
     {"name": "Women’s", "image": "assets/Home Categori image.png"},
@@ -60,27 +66,26 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 45,
-                    width: 293,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        spacing: 5,
-                        children: [
-                          Icon(Icons.search_outlined, color: Colors.grey),
-                          Text(
-                            "Search Products",
-                            style: TextStyle(fontSize: 14, color: Colors.grey),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                          prefixIcon: Icon(Icons.search_outlined),
+                          labelText: "Search Products",labelStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Color(0xffC7C7C7),),
+                          border: OutlineInputBorder(
+                            borderSide:BorderSide(
+                                color: Colors.grey
+                            ),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ],
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.grey)
+                          )
                       ),
                     ),
                   ),
+                  SizedBox(width: 10,),
                   Container(
                     height: 45,
                     width: 50,
@@ -1127,6 +1132,44 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 20,),
+          ],
+        ),
+      ),
+      bottomNavigationBar: // চারপাশে margin
+      ClipRRect(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)), // Rounded corners
+        child: BottomNavigationBar(
+          backgroundColor: Color(0xffFFEFE4),
+          currentIndex: currentIndex,// পিচ কালার
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.black54,
+          type: BottomNavigationBarType.fixed,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list_alt_outlined),
+              label: 'Category',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search_outlined),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag_outlined),
+              label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite_border),
+              label: 'Wishlist',
+            ),
           ],
         ),
       ),
