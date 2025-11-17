@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'category_screen.dart';
+import 'discount_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,7 +13,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 
-  final pages = [ HomeScreen(),CategoryScreen()];
+  // final pages = [
+  //   HomeScreen(),
+  //   CategoryScreen(),
+  //   DiscountScreen()
+  // ];
+  //
+  // void onItemTap (int index){
+  //   setState(() {
+  //     currentIndex = index;
+  //   });
+  // }
 
   List abeyaBurka = [
     {"name": "Women's 2", "image": "assets/Home Categori image.png"},
